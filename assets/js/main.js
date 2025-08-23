@@ -58,10 +58,31 @@ function setupEventListeners() {
 function setupFormHandlers() {
     const loginForm = document.getElementById('loginForm');
     const signupForm = document.getElementById('signupForm');
+    const loginOtpSection = document.getElementById('loginOtpSection');
+    const signupOtpSection = document.getElementById('signupOtpSection');
+    const loginButton = document.getElementById('loginButton');
+    const signupButton = document.getElementById('signupButton');
+    
+    // Ensure OTP sections are hidden initially
+    if (loginOtpSection) loginOtpSection.style.display = 'none';
+    if (signupOtpSection) signupOtpSection.style.display = 'none';
+    
     setupOtpInputs();
 
-    loginForm.addEventListener('submit', handleLogin);
-    signupForm.addEventListener('submit', handleSignup);
+    // Add click handlers for the buttons
+    loginButton.addEventListener('click', (e) => {
+        e.preventDefault();
+        handleLogin(e);
+    });
+
+    signupButton.addEventListener('click', (e) => {
+        e.preventDefault();
+        handleSignup(e);
+    });
+
+    // Prevent form submission
+    loginForm.addEventListener('submit', (e) => e.preventDefault());
+    signupForm.addEventListener('submit', (e) => e.preventDefault());
 }
 
 function setupOtpInputs() {
@@ -103,42 +124,75 @@ function startOtpTimer(timerId, buttonId) {
 
 function handleLogin(e) {
     e.preventDefault();
+    e.stopPropagation();
     const loginContact = document.getElementById('loginContact').value;
     const otpSection = document.getElementById('loginOtpSection');
     const loginButton = document.getElementById('loginButton');
 
-    if (otpSection.style.display === 'none') {
+    // Default test credentials
+    const defaultUser = {
+        email: 'test@kpay.com',
+        phone: '1234567890',
+        otp: '123456'
+    };
+
+    if (!otpSection.style.display || otpSection.style.display === 'none') {
         // First step: Send OTP
         otpSection.style.display = 'block';
         loginButton.textContent = 'Verify OTP';
         startOtpTimer('loginTimer', 'loginButton');
         
-        // Mock OTP send
-        console.log('Sending OTP to:', loginContact);
-        alert('OTP sent to ' + loginContact);
+        // Check if using default credentials
+        if (loginContact === defaultUser.email || loginContact === defaultUser.phone) {
+            alert('For testing, use OTP: ' + defaultUser.otp);
+        } else {
+            alert('OTP sent to ' + loginContact);
+        }
     } else {
         // Second step: Verify OTP
         const otpInputs = otpSection.querySelectorAll('.otp-input');
         const otp = Array.from(otpInputs).map(input => input.value).join('');
         
-        // Mock OTP verification
-        console.log('Verifying OTP:', otp);
-        
-        // Mock successful login
-        alert('Login successful!');
-        hideModal(document.getElementById('loginModal'));
-        window.location.href = 'pages/wallet.html';
+        // Check if using default credentials
+        if ((loginContact === defaultUser.email || loginContact === defaultUser.phone) && 
+            otp === defaultUser.otp) {
+            // Store test user data
+            localStorage.setItem('authToken', 'test-token');
+            localStorage.setItem('userData', JSON.stringify({
+                name: 'Test User',
+                email: defaultUser.email,
+                phone: defaultUser.phone,
+                balance: {
+                    usdt: 1247.50,
+                    btc: 0.0192,
+                    eth: 0.485
+                }
+            }));
+            
+            alert('Login successful!');
+            hideModal(document.getElementById('loginModal'));
+            window.location.href = 'pages/dashboard/index.html';
+        } else if (otp.length === 6) {
+            // Regular OTP verification logic would go here
+            // For now, just mock a successful login
+            alert('Login successful!');
+            hideModal(document.getElementById('loginModal'));
+            window.location.href = 'pages/dashboard/index.html';
+        } else {
+            alert('Invalid OTP');
+        }
     }
 }
 
 function handleSignup(e) {
     e.preventDefault();
+    e.stopPropagation();
     const email = document.getElementById('signupEmail').value;
     const phone = document.getElementById('signupPhone').value;
     const otpSection = document.getElementById('signupOtpSection');
     const signupButton = document.getElementById('signupButton');
 
-    if (otpSection.style.display === 'none') {
+    if (!otpSection.style.display || otpSection.style.display === 'none') {
         // First step: Send OTP
         otpSection.style.display = 'block';
         signupButton.textContent = 'Verify OTP';
