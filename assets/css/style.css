@@ -4,6 +4,8 @@
     --white: #FFFFFF;
     --light-green: #4FD1C5;
     --dark-green: #2F855A;
+    --text-glow: 0 0 80px rgba(56, 161, 105, 0.3),
+                 0 0 32px rgba(56, 161, 105, 0.3);
 }
 
 * {
@@ -20,35 +22,98 @@ body {
 
 /* Navbar Styles */
 .navbar {
-    display: flex;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
     align-items: center;
     padding: 1rem 2rem;
     background-color: var(--white);
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
 
+.brand-text {
+    font-size: 1.8rem;
+    font-weight: 800;
+    grid-column: 1;
+    padding-left: 1rem;
+    color: var(--primary-color);
+    text-shadow: 
+        2px 2px 0 var(--dark-green),
+        4px 4px 0 rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+    position: relative;
+    cursor: pointer;
+}
+
+.brand-text::before {
+    content: 'Kora PayNet';
+    position: absolute;
+    top: 0;
+    left: 1rem;
+    color: transparent;
+    background: linear-gradient(to right, var(--primary-color), var(--dark-green));
+    -webkit-background-clip: text;
+    background-clip: text;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.brand-text:hover {
+    transform: translate3d(2px, 2px, 0);
+    text-shadow: 
+        1px 1px 0 var(--dark-green),
+        2px 2px 0 rgba(0,0,0,0.1);
+}
+
+.brand-text:hover::before {
+    opacity: 1;
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(0px) rotate(0deg);
+    }
+    50% {
+        transform: translateY(-2px) rotate(0.5deg);
+    }
+    100% {
+        transform: translateY(0px) rotate(0deg);
+    }
+}
+
+.brand-text {
+    animation: float 3s ease-in-out infinite;
+    filter: drop-shadow(0 0 0.5rem rgba(56, 161, 105, 0.2));
+}
+
+.brand-text:hover {
+    filter: drop-shadow(0 0 1rem rgba(56, 161, 105, 0.4));
+    text-shadow: var(--text-glow);
+    letter-spacing: 1px;
+}
+
 .logo {
     display: flex;
+    justify-content: center;
     align-items: center;
-    gap: 0.5rem;
+    grid-column: 2;
 }
 
 .logo img {
-    height: 2rem;
+    height: 4.5rem;
     width: auto;
+    transition: transform 0.3s ease;
 }
 
-.logo span {
-    font-size: 1.5rem;
-    font-weight: bold;
-    color: var(--primary-color);
+.logo img:hover {
+    transform: scale(1.08);
 }
 
 .nav-links {
     display: flex;
     gap: 2rem;
     align-items: center;
+    justify-content: flex-end;
+    grid-column: 3;
 }
 
 .nav-links a {
@@ -92,6 +157,14 @@ body {
     padding: 4rem 2rem;
     background: linear-gradient(to right, var(--primary-color), var(--dark-green));
     color: var(--white);
+    margin-top: 0;
+    position: relative;
+    z-index: 1;
+}
+
+.navbar {
+    position: relative;
+    z-index: 2;
 }
 
 .hero h1 {
@@ -275,11 +348,25 @@ footer {
         display: none;
     }
     
+    .brand-text {
+        display: none;
+    }
+    
     .hero h1 {
         font-size: 2rem;
     }
     
     .features {
         grid-template-columns: 1fr;
+    }
+
+    /* Adjust navbar grid for mobile */
+    .navbar {
+        grid-template-columns: auto 1fr;
+    }
+
+    .logo {
+        grid-column: 1;
+        justify-content: flex-start;
     }
 }
