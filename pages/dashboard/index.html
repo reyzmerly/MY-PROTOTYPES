@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kora PayNet - Dashboard</title>
+    <link rel="stylesheet" href="../../assets/css/style.css">
+    <link rel="stylesheet" href="../../assets/css/dashboard/main.css">
+    <link rel="stylesheet" href="../../assets/css/dashboard/wallet.css">
+    <link rel="stylesheet" href="../../assets/css/dashboard/modals.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="logo">
+                <img src="../../assets/images/KPAY.png" alt="Kora PayNet Logo">
+                <span>Kora PayNet</span>
+            </div>
+            <p class="subtitle">Your Digital Finance Hub</p>
+        </div>
+        
+        <div class="content-section">
+            <!-- Wallet Card -->
+            <div class="wallet-card">
+                <div class="balance-toggle">
+                    <span style="font-weight: 600;">Balance</span>
+                    <div class="toggle-switch" onclick="toggleCrypto()">
+                        <div class="toggle-option active" id="usd-toggle">USDT</div>
+                        <div class="toggle-option" id="crypto-toggle">CRYPTO</div>
+                    </div>
+                </div>
+                
+                <div class="actual-balance" id="actual-balance">1,247.50 USDT</div>
+                <div class="local-equivalent" id="local-equivalent">1,247,500 RWF</div>
+                
+                <div class="crypto-equivalents" id="crypto-equivalents">
+                    <div class="crypto-item">
+                        <span>Bitcoin (BTC)</span>
+                        <span>0.0192 BTC</span>
+                    </div>
+                    <div class="crypto-item">
+                        <span>Ethereum (ETH)</span>
+                        <span>0.485 ETH</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Action Buttons -->
+            <div class="action-buttons">
+                <button class="action-btn btn-primary" onclick="openModal('send-modal')">
+                    📤 Send
+                </button>
+                <button class="action-btn btn-primary" onclick="openModal('receive-modal')">
+                    📥 Receive
+                </button>
+                <button class="action-btn btn-secondary" onclick="openModal('topup-modal')">
+                    💳 Top Up
+                </button>
+                <button class="action-btn btn-secondary" onclick="openModal('withdraw-modal')">
+                    💰 Withdraw
+                </button>
+            </div>
+            
+            <!-- P2P Merchant Section -->
+            <div class="merchant-status" id="merchant-status">
+                <div class="feature-title">Become a P2P Merchant</div>
+                <div class="merchant-info">
+                    Invite 5 users + subscription to get verified
+                </div>
+                <div class="merchant-progress">
+                    <strong>Referrals: 2/5</strong>
+                </div>
+            </div>
+            
+            <!-- Features Section -->
+            <div class="features-section">
+                <div class="section-title">Quick Actions</div>
+                
+                <div class="feature-card" onclick="openModal('p2p-modal')">
+                    <div class="feature-title">🏪 P2P Marketplace</div>
+                    <div class="feature-desc">Find merchants for cash-in/cash-out services</div>
+                </div>
+                
+                <div class="feature-card" onclick="showTransactionHistory()">
+                    <div class="feature-title">📊 Transaction History</div>
+                    <div class="feature-desc">View your recent transactions and transfers</div>
+                </div>
+            </div>
+            
+            <!-- Tip Section -->
+            <div class="tip-section">
+                <div class="feature-title">💝 Support Kora PayNet</div>
+                <div class="tip-description">
+                    Your contributions help us maintain and improve our services
+                </div>
+                <div class="tip-buttons">
+                    <button class="tip-btn" onclick="sendTip(1)">1 USDT</button>
+                    <button class="tip-btn" onclick="sendTip(5)">5 USDT</button>
+                    <button class="tip-btn" onclick="sendTip(10)">10 USDT</button>
+                    <button class="tip-btn" onclick="openModal('custom-tip-modal')">Custom</button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Bottom Navigation -->
+        <nav class="bottom-nav">
+            <a href="#" class="nav-item active" onclick="showTab('wallet')">
+                <div class="nav-icon">💳</div>
+                <div class="nav-text">Wallet</div>
+            </a>
+            <a href="#" class="nav-item" onclick="showTab('send')">
+                <div class="nav-icon">📤</div>
+                <div class="nav-text">Send</div>
+            </a>
+            <a href="#" class="nav-item" onclick="showTab('p2p')">
+                <div class="nav-icon">🏪</div>
+                <div class="nav-text">P2P</div>
+            </a>
+            <a href="#" class="nav-item" onclick="showTab('profile')">
+                <div class="nav-icon">👤</div>
+                <div class="nav-text">Profile</div>
+            </a>
+        </nav>
+    </div>
+
+    <!-- Modals -->
+    <div id="modalsContainer"></div>
+
+    <script src="../../assets/js/dashboard/wallet.js"></script>
+    <script src="../../assets/js/dashboard/modals.js"></script>
+    <script src="../../assets/js/dashboard/main.js"></script>
+</body>
+</html>

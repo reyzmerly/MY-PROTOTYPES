@@ -1,0 +1,48 @@
+Core Features (V1)
+User
+
+Sign up via phone/email/username (KYC-lite).
+
+Wallet: Actual USDT + local equivalent (+ optional BTC/ETH equivalents).
+
+In-app Send/Receive: by username/phone/email; instant USDT transfers.
+
+Top up: external crypto deposit (auto-convert to USDT) or P2P cash-in.
+
+Withdraw: to crypto (USDT/BTC/ETH) or local cash via P2P Merchant.
+
+Optional tip the system after transactions.
+
+Merchant (P2P)
+
+Requirements: Invite 5 users + pay subscription to get Verified.
+
+Offer cash-in / cash-out services.
+
+Boost/visibility fee to rank higher.
+
+Auto-Match: users matched by rate, reliability, proximity; sponsored slots available.
+
+5) Monetization (V1, manifesto-aligned)
+
+Merchant subscription (verification access).
+
+Boost/visibility fees (sponsored placements, used in Auto-Match).
+
+Voluntary user tips (one-tap contribution).
+
+(Optional V1.5) Virtual card issuance/top-up fees.
+
+6) UX/UI Guidance
+
+Tabs: Wallet • Send • P2P • Profile.
+
+Wallet card:
+
+Line 1: Actual balance (USDT)
+
+Line 2: Local equivalent (e.g., RWF)
+
+Toggle: BTC/ETH equivalents (display only)
+
+Clear language: “Actual vs Equivalent”.

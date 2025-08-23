@@ -1,0 +1,142 @@
+/* Dashboard Main Styles */
+:root {
+    --primary-color: #38A169;
+    --dark-green: #2F855A;
+    --dark-gray: #1A202C;
+    --white: #FFFFFF;
+    --light-gray: #F7FAFC;
+    --border-color: #E2E8F0;
+}
+
+.container {
+    max-width: 400px;
+    margin: 0 auto;
+    background: var(--white);
+    min-height: 100vh;
+    position: relative;
+    box-shadow: 0 0 20px rgba(0,0,0,0.1);
+}
+
+.header {
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--dark-green) 100%);
+    padding: 20px;
+    color: var(--white);
+    text-align: center;
+}
+
+.header .logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.header .logo img {
+    height: 30px;
+    width: auto;
+}
+
+.header .logo span {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.header .subtitle {
+    font-size: 14px;
+    opacity: 0.9;
+}
+
+.content-section {
+    padding-bottom: 100px;
+}
+
+/* Feature Cards */
+.features-section {
+    padding: 20px;
+}
+
+.section-title {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 15px;
+    color: var(--dark-gray);
+}
+
+.feature-card {
+    background: var(--white);
+    padding: 20px;
+    border-radius: 15px;
+    margin-bottom: 15px;
+    border-left: 4px solid var(--primary-color);
+    box-shadow: 0 2px 8px rgba(26, 32, 44, 0.1);
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.feature-card:hover {
+    transform: translateY(-2px);
+}
+
+.feature-title {
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: var(--dark-gray);
+}
+
+.feature-desc {
+    font-size: 14px;
+    color: #4A5568;
+    line-height: 1.4;
+}
+
+/* Bottom Navigation */
+.bottom-nav {
+    position: fixed;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
+    max-width: 400px;
+    background: var(--white);
+    padding: 15px 0;
+    box-shadow: 0 -5px 15px rgba(26, 32, 44, 0.1);
+    display: flex;
+    justify-content: space-around;
+    border-radius: 20px 20px 0 0;
+    z-index: 100;
+}
+
+.nav-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+    color: #4A5568;
+    transition: color 0.3s ease;
+}
+
+.nav-item.active,
+.nav-item:hover {
+    color: var(--primary-color);
+}
+
+.nav-icon {
+    font-size: 24px;
+    margin-bottom: 5px;
+}
+
+.nav-text {
+    font-size: 12px;
+}
+
+/* Responsive Design */
+@media (max-width: 480px) {
+    .container {
+        max-width: 100%;
+    }
+    
+    .bottom-nav {
+        max-width: 100%;
+    }
+}

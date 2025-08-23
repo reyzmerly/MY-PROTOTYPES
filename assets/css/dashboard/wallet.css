@@ -1,0 +1,158 @@
+/* Wallet Section Styles */
+.wallet-card {
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--dark-green) 100%);
+    margin: 20px;
+    padding: 25px;
+    border-radius: 20px;
+    color: var(--white);
+    box-shadow: 0 10px 30px rgba(56, 161, 105, 0.3);
+}
+
+.balance-toggle {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.toggle-switch {
+    background: rgba(255,255,255,0.2);
+    border-radius: 20px;
+    padding: 4px;
+    display: flex;
+    cursor: pointer;
+}
+
+.toggle-option {
+    padding: 8px 15px;
+    border-radius: 16px;
+    font-size: 12px;
+    transition: all 0.3s ease;
+}
+
+.toggle-option.active {
+    background: var(--white);
+    color: var(--primary-color);
+}
+
+.actual-balance {
+    font-size: 32px;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.local-equivalent {
+    font-size: 16px;
+    opacity: 0.8;
+}
+
+.crypto-equivalents {
+    display: none;
+    margin-top: 15px;
+    padding-top: 15px;
+    border-top: 1px solid rgba(255,255,255,0.2);
+}
+
+.crypto-equivalents.show {
+    display: block;
+}
+
+.crypto-item {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 8px;
+    font-size: 14px;
+}
+
+/* Action Buttons */
+.action-buttons {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+    padding: 20px;
+}
+
+.action-btn {
+    padding: 15px;
+    border: none;
+    border-radius: 15px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--dark-green) 100%);
+    color: var(--white);
+}
+
+.btn-secondary {
+    background: var(--white);
+    color: var(--dark-gray);
+    border: 1px solid var(--border-color);
+}
+
+.action-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(26, 32, 44, 0.2);
+}
+
+/* Merchant Status */
+.merchant-status {
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--dark-green) 100%);
+    padding: 15px 20px;
+    margin: 20px;
+    border-radius: 15px;
+    text-align: center;
+    color: var(--white);
+}
+
+.merchant-info {
+    font-size: 14px;
+    margin-top: 8px;
+}
+
+.merchant-progress {
+    margin-top: 10px;
+}
+
+/* Tip Section */
+.tip-section {
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--dark-green) 100%);
+    margin: 20px;
+    padding: 20px;
+    border-radius: 15px;
+    text-align: center;
+    color: var(--white);
+}
+
+.tip-description {
+    font-size: 14px;
+    margin-bottom: 15px;
+}
+
+.tip-buttons {
+    display: flex;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+.tip-btn {
+    flex: 1;
+    padding: 10px;
+    border: none;
+    border-radius: 10px;
+    background: rgba(255,255,255,0.2);
+    color: var(--white);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.tip-btn:hover {
+    background: rgba(255,255,255,0.3);
+}

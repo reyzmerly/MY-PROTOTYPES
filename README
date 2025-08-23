@@ -1,0 +1,118 @@
+Kora PayNet – Project Guidelines (V1)
+1. Vision & Core Idea
+
+Kora PayNet bridges the gap between cryptocurrencies and everyday users.
+Our mission is to make crypto:
+
+Easily accessible (anyone can top up using crypto).
+
+Borderless (users can send it instantly anywhere in the world).
+
+Locally usable (recipients can withdraw into their local cash via Merchants/P2P).
+
+👉 In short: Top up with crypto → Send globally → Withdraw in cash locally.
+This is our unique differentiator compared to other fintech wallets.
+
+2. Core Features (V1)
+User Side (Basic Users)
+
+Sign up & Wallet Setup
+
+Simple onboarding (email/phone + KYC-lite for compliance if needed).
+
+Each user gets a multi-crypto wallet (BTC, ETH, USDT) local currency(For pairing the prices only) EXample(RWF).
+
+Top-up Options
+
+Add crypto from external wallets/exchanges into Kora PayNet wallet.
+
+In-app QR code & wallet address copy for deposits.
+
+Send & Receive Transfers
+
+Instant transfers between PayNet users (no blockchain fee).
+
+Option to send via username, phone, or QR code.
+
+Withdraw (via Merchants / P2P)
+
+User selects “Withdraw to Cash.”
+
+System auto-matches them with a Merchant (P2P) offering local cash-out at their chosen rate.
+
+Optional System Tips
+
+After successful transactions, user can “tip” the system (voluntary contribution).
+
+Merchant Side (P2P Facilitators)
+
+Merchant Requirements
+
+Must invite 5 users.
+
+Must pay subscription fee to be verified.
+
+Merchant Services
+
+Can offer:
+
+Cash-out (withdraw crypto to local currency)
+
+Cash-in (sell crypto for local deposits, if allowed)
+
+Visibility & Ranking
+
+Verified merchants only.
+
+Boost/visibility fee option to appear in top results.
+
+Matching System
+
+Auto-matching users to merchants based on:
+
+Rate competitiveness.
+
+Merchant reliability/verification status.
+
+Sponsored/boosted merchants (system priority).
+
+3. Monetization Model (V1)
+
+We stay user-first and not profit-hungry. Revenue comes from:
+
+Merchant subscription fee.
+
+Merchant visibility/boost fees.
+
+Optional user tips.
+
+Virtual cards (for spending crypto directly, Phase 1.5).
+
+4. UI/UX Guidelines
+
+Design Language:
+
+Clean, global fintech style (like CashApp / Binance Lite).
+
+Colors:Blue (#2B6CB0) → conveys trust, stability, and reliability.
+
+Green (#38A169) → represents growth, prosperity, and money.
+
+Dark Gray/Black (#1A202C) → adds contrast, professionalism, and authority.
+
+White (#FFFFFF) → background for clarity and simplicity.
+
+Flows to Design First:
+
+Onboarding & Wallet setup.
+
+Crypto Top-up flow.
+
+Send/receive money flow.
+
+Withdraw via merchant flow.
+
+Merchant dashboard & visibility options.
+
+Principle: Zero learning curve. If a grandma in a village opens it, she must understand “Send → Receive → Withdraw.”
+

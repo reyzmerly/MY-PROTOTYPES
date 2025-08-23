@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Send Money - Kora PayNet</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/send.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">
+            <img src="../assets/images/KPAY.png" alt="Kora PayNet Logo">
+            <span>Kora PayNet</span>
+        </div>
+        <div class="nav-links">
+            <a href="../index.html">Home</a>
+            <a href="wallet.html">Wallet</a>
+            <a href="#" class="active">Send</a>
+            <a href="withdraw.html">Withdraw</a>
+        </div>
+    </nav>
+
+    <main class="send-container">
+        <h1>Send Money</h1>
+        
+        <form id="sendForm" class="send-form">
+            <div class="form-group">
+                <label for="recipient">Recipient</label>
+                <input type="text" id="recipient" placeholder="Username, phone, or scan QR">
+                <button type="button" class="btn-scan">Scan QR</button>
+            </div>
+
+            <div class="form-group">
+                <label for="amount">Amount</label>
+                <input type="number" id="amount" placeholder="0.00">
+                <select id="currency">
+                    <option value="BTC">BTC</option>
+                    <option value="ETH">ETH</option>
+                    <option value="USDT">USDT</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="note">Note (optional)</label>
+                <input type="text" id="note" placeholder="Add a note">
+            </div>
+
+            <button type="submit" class="btn-primary">Send Money</button>
+        </form>
+    </main>
+
+    <script src="../assets/js/send.js"></script>
+</body>
+</html>

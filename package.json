@@ -1,0 +1,17 @@
+{
+  "name": "kora-paynet",
+  "version": "1.0.0",
+  "description": "Kora PayNet - Cryptocurrency Wallet and P2P Platform",
+  "scripts": {
+    "start": "node start.js",
+    "backend": "cd backend && npm start",
+    "dev": "concurrently \"npm start\" \"npm run backend\"",
+    "install-all": "npm install && cd backend && npm install"
+  },
+  "dependencies": {
+    "express": "^4.18.2"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.0"
+  }
+}

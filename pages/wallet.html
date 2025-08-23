@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wallet - Kora PayNet</title>
+    <link rel="stylesheet" href="../assets/css/style.css">
+    <link rel="stylesheet" href="../assets/css/wallet.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">
+            <img src="../assets/images/KPAY.png" alt="Kora PayNet Logo">
+            <span>Kora PayNet</span>
+        </div>
+        <div class="nav-links">
+            <a href="../index.html">Home</a>
+            <a href="#" class="active">Wallet</a>
+            <a href="send.html">Send</a>
+            <a href="withdraw.html">Withdraw</a>
+        </div>
+    </nav>
+
+    <main class="wallet-container">
+        <section class="balance-cards">
+            <div class="crypto-card">
+                <h3>BTC Balance</h3>
+                <p class="balance">0.000000 BTC</p>
+                <p class="fiat-value">≈ $0.00</p>
+            </div>
+            <div class="crypto-card">
+                <h3>ETH Balance</h3>
+                <p class="balance">0.000000 ETH</p>
+                <p class="fiat-value">≈ $0.00</p>
+            </div>
+            <div class="crypto-card">
+                <h3>USDT Balance</h3>
+                <p class="balance">0.00 USDT</p>
+                <p class="fiat-value">≈ $0.00</p>
+            </div>
+        </section>
+
+        <section class="actions">
+            <button class="btn-action" onclick="showQRCode()">Receive</button>
+            <button class="btn-action" onclick="window.location.href='send.html'">Send</button>
+            <button class="btn-action" onclick="window.location.href='withdraw.html'">Withdraw</button>
+        </section>
+
+        <section class="transaction-history">
+            <h2>Transaction History</h2>
+            <div class="transactions">
+                <!-- Transactions will be loaded dynamically -->
+                <p class="no-transactions">No transactions yet</p>
+            </div>
+        </section>
+    </main>
+
+    <script src="../assets/js/wallet.js"></script>
+</body>
+</html>
